@@ -1,0 +1,50 @@
+<div class="p-4">
+  <header class="d-flex justify-content-between align-items-center">
+    <h1 class="m-0">View All Tasks</h1>
+    <button mat-flat-button matDialogClose class="text-danger">
+      <mat-icon>close</mat-icon>
+    </button>
+  </header>
+  <div class="container my-3">
+    <img
+      [src]="'http://localhost:8080/images/' + tasks.image"
+      alt=""
+      srcset=""
+    />
+    <input
+      class="form-control my-2"
+      type="text"
+      [value]="tasks?.title"
+      readonly
+    />
+    <input
+      class="form-control my-2"
+      type="text"
+      [value]="tasks?.deadline"
+      readonly
+    />
+    <input
+      class="form-control my-2"
+      type="text"
+      [value]="tasks?.status"
+      readonly
+    />
+    <textarea
+      class="form-control my-2"
+      [value]="tasks?.description"
+      readonly
+    ></textarea>
+  </div>
+  <footer class="tw-p-6">
+    <div class="d-flex justify-content-center align-items-center">
+      <button
+        mat-flat-button
+        class="btn btn-danger py-1 px-5"
+        (click)="dialogRef.close()"
+      >
+        Close
+      </button>
+    </div>
+  </footer>
+</div>
+

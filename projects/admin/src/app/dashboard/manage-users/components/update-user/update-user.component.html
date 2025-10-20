@@ -1,0 +1,42 @@
+<div class="p-4">
+  <header class="d-flex justify-content-between align-items-center">
+    <h1 class="m-0">Update Status User</h1>
+    <button mat-flat-button matDialogClose class="text-danger">
+      <mat-icon>close</mat-icon>
+    </button>
+  </header>
+  <form class="example-form my-5">
+    <mat-form-field class="example-full-width">
+      <mat-label>status</mat-label>
+      <input
+        type="text"
+        placeholder="Pick one"
+        aria-label="status"
+        matInput
+        [formControl]="myControl"
+        [matAutocomplete]="auto"
+      />
+      <mat-autocomplete #auto="matAutocomplete">
+        <mat-option
+          *ngFor="let option of filteredOptions | async"
+          [value]="option"
+        >
+          {{ option }}
+        </mat-option>
+      </mat-autocomplete>
+    </mat-form-field>
+  </form>
+  <footer class="tw-p-6">
+    <div class="d-flex justify-content-center align-items-center">
+      <button
+        mat-flat-button
+        class="btn btn-success py-1 px-5 mx-2"
+        (click)="updateUsrStatus()"
+      >
+        Create
+      </button>
+
+      <button mat-flat-button class="btn btn-danger py-1 px-5">Close</button>
+    </div>
+  </footer>
+</div>
